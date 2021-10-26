@@ -33,7 +33,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pBtn_connect">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -46,7 +46,7 @@
     <string>Conectar</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pBtn_close">
    <property name="geometry">
     <rect>
      <x>290</x>

@@ -1,15 +1,40 @@
-#include "widget.h"
+#include "Client.h"
 #include "ui_widget.h"
 
-Widget::Widget(QWidget *parent)
+Client::Client(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::Widget)
+    , ui(new Ui::Client)
 {
     ui->setupUi(this);
+    connect(ui->pBtn_close,&QAbstractButton::clicked,this,&QWidget::close );
+    connect(clientSocket, &QIODevice::readyRead,this,&Client::readMessage);
 }
 
-Widget::~Widget()
+Client::~Client()
 {
     delete ui;
 }
+
+void Client::requestMessage()
+{
+    qDebug()<<" requestMessage() comienza";
+}
+
+void Client::readMessage()
+{
+    qDebug()<<"readMessage() comienza";
+}
+
+void Client::showError()
+{
+    qDebug()<<"showError() comienza";
+}
+
+
+
+//void Widget::on_pBtn_close_clicked()
+//{
+//    qDebug()<<" iniciando on_pBtn_close_clicked()   ";
+//    close();
+//}
 
